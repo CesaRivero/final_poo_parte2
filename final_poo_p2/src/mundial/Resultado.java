@@ -5,17 +5,12 @@ public class Resultado {
     private int goleslVisitante;
 
     public boolean ganoLocal(){
-        if (golesLocal>goleslVisitante)
-            return ganoLocal();
-
-        return false;
+        return golesLocal>goleslVisitante;
     }
 
     public boolean empate(){
-        if (golesLocal==goleslVisitante)
-            return empate();
 
-        return false;
+            return golesLocal==goleslVisitante;
     }
 
     public int getGolesLocal() {

@@ -11,13 +11,28 @@ public class Partido {
     Partido(){
 
     }
+    public Partido(Equipo local, Equipo visitante, Date fecha,Resultado resultado){
+        this.setFecha(fecha);
+        this.setLocal(local);
+        this.setVisitante(visitante);
+        resultado=new Resultado();
+        this.setResultado(resultado);
+
+    }
     public Partido(Equipo local, Equipo visitante, Date fecha){
         this.setFecha(fecha);
         this.setLocal(local);
         this.setVisitante(visitante);
+        resultado=new Resultado();
+        this.setResultado(resultado);
 
     }
 
+    public void hacerGol(int golesLocales, int golesVisitante){
+        getResultado().setGoleslVisitante(golesVisitante);
+        getResultado().setGolesLocal(golesLocales);
+
+    }
     public Date getFecha() {
         return fecha;
     }

@@ -20,7 +20,6 @@ public class EtapaMundial {
 
 }
 
-
     public String getDescripcionEtapa() {
         return descripcionEtapa;
     }
