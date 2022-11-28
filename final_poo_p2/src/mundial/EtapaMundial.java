@@ -1,3 +1,5 @@
+package mundial;
+
 import java.util.ArrayList;
 public class EtapaMundial {
     private String descripcionEtapa;

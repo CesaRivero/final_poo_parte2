@@ -1,3 +1,5 @@
+package mundial;
+
 import java.util.ArrayList;
 
 public class Equipo {
@@ -6,7 +8,7 @@ public class Equipo {
     Equipo(){
 
     }
-    Equipo(String nombre){
+    public Equipo(String nombre){
         this.setNombre(nombre);
 
     }

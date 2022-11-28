@@ -1,3 +1,5 @@
+package mundial;
+
 import java.util.Date;
 
 public class Partido {
@@ -9,7 +11,7 @@ public class Partido {
     Partido(){
 
     }
-    Partido(Equipo local,Equipo visitante, Date fecha){
+    public Partido(Equipo local, Equipo visitante, Date fecha){
         this.setFecha(fecha);
         this.setLocal(local);
         this.setVisitante(visitante);
