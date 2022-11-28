@@ -1,9 +1,5 @@
-import garage.Auto;
-import garage.Garage;
-import garage.Moto;
-import mundial.Equipo;
-import mundial.Partido;
-
+import garage.*;
+import mundial.*;
 import java.util.Date;
 
 public class Main {
@@ -12,20 +8,33 @@ public class Main {
         Equipo equipo2=new Equipo("Alumnos");
         Equipo equipo3=new Equipo("Salchipapas");
         Equipo equipo4=new Equipo("Davinci");
+        Equipo equipo5=new Equipo("LoPibes");
+        Equipo equipo6=new Equipo("Bokita");
+
         Partido partido1=new Partido(equipo1,equipo2, new Date(22,10,22));
+        Partido partido2=new Partido(equipo3,equipo4,new Date(22,10,22));
+
+        EtapaMundial grupo1=new Grupo();
+        EtapaMundial grupo2=new Grupo();
+
+        grupo1.agregarPartido(partido1);
+
        
 
         partido1.hacerGol(1,2);
+        partido2.hacerGol(1,5);
         if(partido1.getResultado().ganoLocal()) {
             System.out.println("Gano local");
         }else if(partido1.getResultado().empate()){
             System.out.println("Empataron estos muertos ");
         } else System.out.println("Gano Visitante");
 
+        partido1.getLocal().
 
 
 
-        System.out.println("\n-------\n");
+
+        //System.out.println("\n-------\n");
 
         Garage garage1=new Garage(2,100);
         Auto auto1=new Auto("Renault","Logan",40000,4,5);

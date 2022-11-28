@@ -7,4 +7,7 @@ public class Grupo extends EtapaMundial{
     public ArrayList<Equipo> getEquiposQueAvanzan() {
         return super.getEquiposQueAvanzan();
     }
+    public Grupo(){
+        this.setDescripcionEtapa("Fase de Grupos");
+    }
 }
