@@ -5,7 +5,7 @@ public class Resultado {
     private int goleslVisitante;
 
     public boolean ganoLocal(){
-        return golesLocal>goleslVisitante;
+        return  golesLocal>goleslVisitante;
     }
 
     public boolean empate(){

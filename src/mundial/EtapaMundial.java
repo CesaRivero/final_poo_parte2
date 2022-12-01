@@ -8,6 +8,7 @@ public class EtapaMundial {
 
     public EtapaMundial() {
         this.listaDePartidos=new ArrayList<Partido>();
+        this.equiposQueAvanzan=new ArrayList<Equipo>();
     }
 
     public ArrayList<Partido> agregarPartido( Partido listaDePartidos){
@@ -16,8 +17,14 @@ public class EtapaMundial {
 
     }
     public ArrayList<Equipo> getEquiposQueAvanzan(){
-        return equiposQueAvanzan;
+        for (int i = 0; i <listaDePartidos.size() ; i++) {
+            if (getListaDePartidos().get(i).getResultado().ganoLocal()){
+                this.equiposQueAvanzan.add(getListaDePartidos().get(i).getLocal());
+            }else this.equiposQueAvanzan.add(getListaDePartidos().get(i).getVisitante());
 
+        }
+
+        return equiposQueAvanzan;
 }
 
     public String getDescripcionEtapa() {

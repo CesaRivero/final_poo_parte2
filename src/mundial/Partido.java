@@ -8,7 +8,9 @@ public class Partido {
     private Equipo visitante;
     private Resultado resultado;
 
-    Partido(){
+    public Partido(){
+        this.setResultado(new Resultado());
+
 
     }
     public Partido(Equipo local, Equipo visitante, Date fecha,Resultado resultado){
@@ -23,8 +25,7 @@ public class Partido {
         this.setFecha(fecha);
         this.setLocal(local);
         this.setVisitante(visitante);
-        resultado=new Resultado();
-        this.setResultado(resultado);
+        this.setResultado(new Resultado());
 
     }
 
