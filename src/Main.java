@@ -23,7 +23,7 @@ public class Main {
         EtapaMundial grupo2=new Grupo();
 
         grupo1.agregarPartido(partido1);
-      //  partido1.getResultado().setGolesLocal(2);
+        // partido1.getResultado().setGolesLocal(2);
        // grupo1.getEquiposQueAvanzan();     // 4 equipos -> 2 partidos
 
         Llave semiFinal1=new Llave();
