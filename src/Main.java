@@ -46,15 +46,18 @@ public class Main {
         ArrayList<Equipo> finalistas = new ArrayList<Equipo>();
         finalistas.add(equipo5);
         finalistas.add(equipo6);
-
+//creo partido y le seteo equipos y fecha
         Partido partidoFinal=new Partido();
         partidoFinal.setLocal(finalistas.get(0));
         partidoFinal.setVisitante(finalistas.get(1));
         partidoFinal.setFecha(new Date(22,11,18));
 
+// creo la etapa del mundial, en este caso es la final
+
         Llave finalMundial = new Llave();
         finalMundial.agregarPartido(partidoFinal);
         partidoFinal.hacerGol(2,1);
+        //creo el array donde guardo los equipos que avanzan, en este caso solo avanza uno
         ArrayList<Equipo> ganador = finalMundial.getEquiposQueAvanzan(); // 2 equipos -> 1 partido
 
 
