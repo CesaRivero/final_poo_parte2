@@ -6,62 +6,51 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Equipo equipo1=new Equipo("Profesores");
-        Equipo equipo2=new Equipo("Alumnos");
-        Equipo equipo3=new Equipo("Salchipapas");
-        Equipo equipo4=new Equipo("Davinci");
-        Equipo equipo5=new Equipo("LoPibes");
-        Equipo equipo6=new Equipo("Bokita");
 
-        Partido partido1=new Partido(equipo1,equipo2, new Date(22,10,22));
-        Partido partido2=new Partido(equipo3,equipo4,new Date(22,10,22));
-        Partido semi1=new Partido();
-        Partido semi2=new Partido();
+        ArrayList<Equipo>equiposGrupoA= new ArrayList<Equipo>();
+        equiposGrupoA.add(new Equipo("Profesores"));
+        equiposGrupoA.add(new Equipo("Salchipapas"));
+        equiposGrupoA.add(new Equipo("Davinci"));
+        equiposGrupoA.add(new Equipo("LoPibes"));
 
 
-        EtapaMundial grupo1=new Grupo();
-        EtapaMundial grupo2=new Grupo();
+        ArrayList<Equipo>equiposGrupoB =new ArrayList<Equipo>();
+        equiposGrupoB.add(new Equipo("Bokita"));
+        equiposGrupoB.add(new Equipo("Alumnos"));
+        equiposGrupoB.add(new Equipo("Profesores1"));
+        equiposGrupoB.add(new Equipo("Profesores2"));
 
-        grupo1.agregarPartido(partido1);
-        // partido1.getResultado().setGolesLocal(2);
-       // grupo1.getEquiposQueAvanzan();     // 4 equipos -> 2 partidos
 
-        Llave semiFinal1=new Llave();
-        Llave semiFinal2=new Llave();
-        semiFinal1.agregarPartido(semi1);
-        semiFinal2.agregarPartido(semi2);
-        ArrayList<Equipo> semifinalistas = new ArrayList<Equipo>();
-        semifinalistas.add(equipo5);
-        semifinalistas.add(equipo6);
-        semifinalistas.add(equipo4);
-        semifinalistas.add(equipo3);
+        Grupo grupoA = new Grupo();
+        grupoA.generarPartidos(equiposGrupoA);
+        Grupo grupoB = new Grupo();
+        grupoB.generarPartidos(equiposGrupoB);
 
-        semi1.setLocal(equipo5);
-        semi1.setVisitante(equipo6);
-        semi2.setLocal(equipo3);
-        semi2.setVisitante(equipo4);
-        semi1.hacerGol(5,2);
-        semi2.hacerGol(1,3);
+        ArrayList<Equipo> clasificadosOctavos = grupoA.getEquiposQueAvanzan();
 
-        ArrayList<Equipo> finalistas = new ArrayList<Equipo>();
-        finalistas.add(equipo5);
-        finalistas.add(equipo6);
-//creo partido y le seteo equipos y fecha
-        Partido partidoFinal=new Partido();
-        partidoFinal.setLocal(finalistas.get(0));
-        partidoFinal.setVisitante(finalistas.get(1));
-        partidoFinal.setFecha(new Date(22,11,18));
 
-// creo la etapa del mundial, en este caso es la final
+
+        Llave octavos = new Llave();
+        octavos.generarPartidos(clasificadosOctavos);
+        ArrayList<Equipo> clasificadosCuartos = octavos.getEquiposQueAvanzan();
+
+        Llave cuartos = new Llave();
+        cuartos.generarPartidos(clasificadosCuartos);
+        ArrayList<Equipo> clasificadosSemis = cuartos.getEquiposQueAvanzan();
+
+        Llave semis = new Llave();
+        semis.generarPartidos(clasificadosSemis);
+        semis.getListaDePartidos().get(0).hacerGol(2, 1);
+        semis.getListaDePartidos().get(1).hacerGol(2, 1);
+        ArrayList<Equipo> finalistas = semis.getEquiposQueAvanzan();
 
         Llave finalMundial = new Llave();
-        finalMundial.agregarPartido(partidoFinal);
-        partidoFinal.hacerGol(2,1);
-        //creo el array donde guardo los equipos que avanzan, en este caso solo avanza uno
-        ArrayList<Equipo> ganador = finalMundial.getEquiposQueAvanzan(); // 2 equipos -> 1 partido
+        finalMundial.generarPartidos(finalistas);
+        ArrayList<Equipo>ganador=finalMundial.getEquiposQueAvanzan();
 
 
-        partido1.hacerGol(1,2);
+
+       /* partido1.hacerGol(1,2);
         partido2.hacerGol(1,5);
         if(partido1.getResultado().ganoLocal()) {
             System.out.println("Gano local");
@@ -69,7 +58,7 @@ public class Main {
             System.out.println("Empataron estos muertos ");
         } else System.out.println("Gano Visitante");
 
-        //partido1.getLocal().
+        //partido1.getLocal().*/
 
         System.out.println("\n-------\n");
 

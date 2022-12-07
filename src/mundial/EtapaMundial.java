@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class EtapaMundial {
     private String descripcionEtapa;
     private  ArrayList<Partido> listaDePartidos;
-    private ArrayList<Equipo>equiposQueAvanzan;
+    public ArrayList<Equipo>equiposQueAvanzan;
 
     public EtapaMundial() {
         this.listaDePartidos=new ArrayList<Partido>();
@@ -17,12 +17,7 @@ public class EtapaMundial {
 
     }
     public ArrayList<Equipo> getEquiposQueAvanzan(){
-        for (int i = 0; i <listaDePartidos.size() ; i++) {
-            if (getListaDePartidos().get(i).getResultado().ganoLocal()){
-                this.equiposQueAvanzan.add(getListaDePartidos().get(i).getLocal());
-            }else this.equiposQueAvanzan.add(getListaDePartidos().get(i).getVisitante());
 
-        }
 
         return equiposQueAvanzan;
 }
