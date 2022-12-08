@@ -3,7 +3,7 @@ package mundial;
 import java.util.ArrayList;
 public class EtapaMundial {
     private String descripcionEtapa;
-    private  ArrayList<Partido> listaDePartidos;
+    private  ArrayList<Partido> listaDePartidos ;
     public ArrayList<Equipo>equiposQueAvanzan;
 
     public EtapaMundial() {

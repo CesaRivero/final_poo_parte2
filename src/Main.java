@@ -23,10 +23,20 @@ public class Main {
 
         Grupo grupoA = new Grupo();
         grupoA.generarPartidos(equiposGrupoA);
+
+        System.out.println( grupoA.getListaDePartidos() );
         Grupo grupoB = new Grupo();
         grupoB.generarPartidos(equiposGrupoB);
+        grupoB.getListaDePartidos().get(0).hacerGol(2,1);
+        grupoB.getListaDePartidos().get(1).hacerGol(4,6);
+        grupoB.getListaDePartidos().get(2).hacerGol(3,1);
+        grupoB.getListaDePartidos().get(3).hacerGol(2,1);
 
-        ArrayList<Equipo> clasificadosOctavos = grupoA.getEquiposQueAvanzan();
+
+
+        ArrayList<Equipo> clasificadosOctavos = new ArrayList<Equipo>();
+        clasificadosOctavos.addAll(grupoA.getEquiposQueAvanzan());
+
 
 
 

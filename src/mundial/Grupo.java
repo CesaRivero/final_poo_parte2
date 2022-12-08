@@ -6,22 +6,19 @@ import java.util.Date;
 public class Grupo extends EtapaMundial{
 
     public void generarPartidos(ArrayList<Equipo>equipos){
-        for (int i = 0; i <equipos.size()+1 ; i++) {
-            getListaDePartidos().add(new Partido(equipos.get(i),equipos.get(i+1),new Date()));
+        // for dentro de for para recorrer partidos de grupos funciona
+        for (int i = 0; i < equipos.size(); i++) {
+            for (int j = i+1; j <equipos.size() ; j++) {
+                getListaDePartidos().add(new Partido(equipos.get(i),equipos.get(j),new Date()));
 
-
-                    /*0-1
-                    0-2
-                    0-3
-                    2-1
-                    3-1
-                    2-3*/
+            }
 
         }
     }
     @Override
     public ArrayList<Equipo> getEquiposQueAvanzan() {
 
+        equiposQueAvanzan;
         for (int i = 0; i <getListaDePartidos().size() ; i++) {
             if (getListaDePartidos().get(i).getResultado().ganoLocal()){
                 this.equiposQueAvanzan.add(getListaDePartidos().get(i).getLocal());
