@@ -17,8 +17,6 @@ public class Grupo extends EtapaMundial{
     }
     @Override
     public ArrayList<Equipo> getEquiposQueAvanzan() {
-
-
         for (int i = 0; i <getListaDePartidos().size() ; i++) {
             if (getListaDePartidos().get(i).getResultado().ganoLocal()){
                 getListaDePartidos().get(i).getLocal().sumarPunto();
@@ -43,5 +41,10 @@ public class Grupo extends EtapaMundial{
     }
     public Grupo(){
         this.setDescripcionEtapa("Fase de Grupos");
+    }
+
+    @Override
+    public void generarMarcador(ArrayList<Partido> partidos) {
+        super.generarMarcador(partidos);
     }
 }

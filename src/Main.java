@@ -59,12 +59,21 @@ public class Main {
 
         Grupo grupoA = new Grupo();
         grupoA.generarPartidos(equiposGrupoA);
+       /* grupoA.generarMarcador(grupoA.getListaDePartidos());  funciona solo falta arreglar condicion y ramdom 
+
+     for (int i = 0; i < grupoA.getListaDePartidos().size(); i++) {
+          int n= (int)(Math.random() * 5+1);
+            grupoA.getListaDePartidos().get(i).hacerGol(n,n);
+
+        }
+        tratamos de usar ramdom pero no da */
         grupoA.getListaDePartidos().get(0).hacerGol(2,1);
         grupoA.getListaDePartidos().get(1).hacerGol(4,6);
         grupoA.getListaDePartidos().get(2).hacerGol(3,1);
         grupoA.getListaDePartidos().get(3).hacerGol(2,1);
         grupoA.getListaDePartidos().get(4).hacerGol(2,1);
         grupoA.getListaDePartidos().get(5).hacerGol(0,1);
+
 
         Grupo grupoB = new Grupo();
         grupoB.generarPartidos(equiposGrupoB);

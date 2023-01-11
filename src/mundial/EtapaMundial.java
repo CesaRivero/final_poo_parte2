@@ -1,6 +1,7 @@
 package mundial;
 
 import java.util.ArrayList;
+import java.util.Random;
 public class EtapaMundial {
     private String descripcionEtapa;
     private  ArrayList<Partido> listaDePartidos ;
@@ -36,5 +37,13 @@ public class EtapaMundial {
 
     public void setListaDePartidos(ArrayList<Partido> listadePartidos) {
         this.listaDePartidos = listadePartidos;
+    }
+
+    public void generarMarcador(ArrayList<Partido>partidos){
+        for (int i = 0; i < partidos.size(); i++) {
+            getListaDePartidos().get(i).hacerGol(8, (int) (Math.random()*1));
+
+        }
+
     }
 }
