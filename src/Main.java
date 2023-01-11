@@ -59,6 +59,7 @@ public class Main {
 
         Grupo grupoA = new Grupo();
         grupoA.generarPartidos(equiposGrupoA);
+
        /* grupoA.generarMarcador(grupoA.getListaDePartidos());  funciona solo falta arreglar condicion y ramdom 
 
      for (int i = 0; i < grupoA.getListaDePartidos().size(); i++) {
@@ -67,6 +68,13 @@ public class Main {
 
         }
         tratamos de usar ramdom pero no da */
+
+        /*for (int i = 0; i <grupoA.getListaDePartidos().size(); i++) {
+            grupoA.getListaDePartidos().get(i).hacerGol((int) (Math.random()*4),(int) (Math.random()*3));
+
+        }
+        asi puedo optimizar el resultado de los partidos pero hay que limitar que no sea empate y luego modificar la condicion para que avancen de grupo*/
+
         grupoA.getListaDePartidos().get(0).hacerGol(2,1);
         grupoA.getListaDePartidos().get(1).hacerGol(4,6);
         grupoA.getListaDePartidos().get(2).hacerGol(3,1);
